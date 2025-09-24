@@ -1,4 +1,4 @@
-# Getting started
+#. Getting started
 
 Here is how you can create your own ZMK keymap for the Urchin.
 
