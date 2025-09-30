@@ -175,8 +175,8 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&to 0         &none         &none             &none           &none   &none           &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
+&to 0         &none         &none             &none           &none   &kp EXCL        &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
 &none         &none         &none             &none           &none   &msc SCRL_DOWN  &mkp MB3        &msc SCRL_LEFT  &msc SCRL_RIGHT  &none
                                               &trans          &trans  &mkp LCLK       &mkp MB2
             >;
