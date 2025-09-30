@@ -72,6 +72,15 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
         };
+
+        alt_tab_override: alt_tab_override {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_TAB_OVERRIDE";
+            bindings = <&kp DOT>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
     };
 
     macros {
@@ -121,6 +130,11 @@
             key-positions = <12 13>;
             bindings = <&kp LC(SPACE)>;
             layers = <BASE>;
+        };
+
+        combo_caps {
+            bindings = <&kt CAPSLOCK>;
+            key-positions = <26 27>;
         };
     };
 
