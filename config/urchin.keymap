@@ -76,10 +76,11 @@
         alt_tab_override: alt_tab_override {
             compatible = "zmk,behavior-mod-morph";
             label = "ALT_TAB_OVERRIDE";
-            bindings = <&kp DOT>, <&kp TAB>;
+            bindings = <&kp FSLH>, <&kp TAB>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
     };
 
@@ -148,7 +149,7 @@
             bindings = <
 &kp Q        &kp W           &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
 &hml LGUI A  &hml LALT R     &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&bootloader  &studio_unlock  &bt BT_CLR    &bt BT_SEL 0  &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &kp FSLH
+&bootloader  &studio_unlock  &bt BT_CLR    &bt BT_SEL 0  &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
                                            &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
             >;
         };
