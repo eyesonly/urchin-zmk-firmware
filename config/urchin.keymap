@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "keymap_italian.h"
 
 // Layer definitions
@@ -126,18 +127,19 @@
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
 
-        combo_ctrl_space {
-            timeout-ms = <200>;
-            key-positions = <12 13>;
-            bindings = <&kp LC(SPACE)>;
-            layers = <BASE>;
-        };
-
         combo_caps {
             bindings = <&kt CAPSLOCK>;
             key-positions = <26 27>;
             layers = <0>;
             timeout-ms = <50>;
+        };
+
+        toggle_emacs_layer {
+            bindings = <&tog 3>;
+            key-positions = <30 23>;
+            timeout-ms = <50>;
+            slow-release;
+            layers = <0>;
         };
     };
 
@@ -151,7 +153,7 @@
             bindings = <
 &kp Q        &kp W           &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
 &hml LGUI A  &hml LALT R     &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&bootloader  &studio_unlock  &bt BT_CLR    &bt BT_SEL 0  &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
+&bootloader  &studio_unlock  &bt BT_CLR    &kp D         &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
                                            &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
             >;
         };
@@ -161,10 +163,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&none  &none         &none         &none      &none        &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT  &kp IT_LBKT  &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
-&none  &none         &kp IT_RPAR   &none      &none        &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
-                                   &trans     &trans       &trans         &trans
+&to 0         &none         &none             &none      &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT  &tog 1  &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none         &none         &none             &none      &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
+                                              &trans     &trans  &trans         &trans
             >;
         };
 
@@ -173,10 +175,10 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE  &kp PG_UP     &kp HOME   &kp UP    &kp END    &kp CAPS
-&sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT     &kp PG_DN     &kp LEFT   &kp DOWN  &kp RIGHT  &kp DEL
-&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)    &kp LC(BSPC)  &kp BSPC   &trans    &trans     &trans
-                                   &trans      &kp LCTRL    &kp ENTER     &mo EMACS
+&to 0         &none         &none             &none           &none   &none           &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
+&none         &none         &none             &none           &none   &msc SCRL_DOWN  &mkp MB3        &msc SCRL_LEFT  &msc SCRL_RIGHT  &none
+                                              &trans          &trans  &mkp LCLK       &mkp MB2
             >;
         };
 
@@ -185,10 +187,10 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&kp F1    &kp F2    &kp F3      &kp F4     &kp F5    &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT  &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-&none     &none     &none       &none      &none     &none    &none    &none            &none   &none
-                                &none      &none     &none    &none
+&to 0         &kp NUMBER_2  &none             &none           &none   &kp NUMBER_1        &kp NUMBER_2   &kp UP_ARROW       &kp RC(W)             &kp RA(W)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
+&none         &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+                                              &trans          &trans  &none               &none
             >;
         };
 
