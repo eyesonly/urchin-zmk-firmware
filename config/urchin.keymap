@@ -133,7 +133,7 @@
             label = "Base";
             bindings = <
 &kp Q        &kp W           &kp F       &kp P         &kp B             &kp J      &kp L    &kp U      &kp Y    &kp SINGLE_QUOTE
-&hml LGUI A     &hml LALT R           &hml LCTL S       &hml LSHIFT T         &kp G             &kp M      &kp N    &kp E      &kp I    &kp O
+&hml A LGUI     &hml R LALT           &hml S LCTL       &hml T LSHIFT         &kp G             &kp M      &kp N    &kp E      &kp I    &kp O
 &bootloader  &studio_unlock  &bt BT_CLR  &bt BT_SEL 0  &kp V             &kp K      &kp H    &kp COMMA  &kp DOT  &kp FSLH
                                          &mo MOUSE     &qt LSHIFT SPACE  &kp SPACE  &sl NAV
             >;
