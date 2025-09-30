@@ -136,6 +136,8 @@
         combo_caps {
             bindings = <&kt CAPSLOCK>;
             key-positions = <26 27>;
+            layers = <0>;
+            timeout-ms = <50>;
         };
     };
 
@@ -159,10 +161,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&kp N1        &kp N2       &kp N3       &kp N4       &kp N5       &kp N6      &kp N7       &kp N8        &kp N9        &kp N0
-&kp IT_LESS   &kp IT_USD   &kp IT_LPAR  &kp IT_LBRC  &kp IT_LBKT  &kp IT_EQL  &kp IT_QUES  &kp IT_SQUOT  &kp IT_MINUS  &kp IT_AST
-&kp IT_GREAT  &kp IT_PERC  &kp IT_RPAR  &kp IT_RBRC  &kp IT_RBKT  &kp IT_AT   &kp IT_EXCL  &kp IT_DQUOT  &kp IT_PLUS   &kp IT_FSLH
-                                        &mo EMACS    &mo SYM      &trans      &trans
+&none  &none         &none         &none      &none        &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT  &kp IT_LBKT  &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none  &none         &kp IT_RPAR   &none      &none        &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
+                                   &trans     &trans       &trans         &trans
             >;
         };
 
