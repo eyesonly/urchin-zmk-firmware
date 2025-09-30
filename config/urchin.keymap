@@ -5,12 +5,12 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/keys.h>
 #include "keymap_italian.h"
 
 // Layer definitions
+
 #define BASE 0
 #define NAV 1
 #define MOUSE 2
@@ -18,148 +18,197 @@
 #define SYM 4
 #define NUMB 5
 #define FUNC 6
+
 // -----------------
 
 &sk {
-	// don't release mods on other mods presses
-	ignore-modifiers;
+    // don't release mods on other mods presses
+
+    ignore-modifiers;
 };
 
-
 / {
-	behaviors {
-		// Enables holding the first mod-tap key
-		// by performing a tap-release-hold sequence.
-		// To use it: "&qt KEYCODE1 KEYCODE2"
-		qt: quick_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
-	};
+    behaviors {
+        // Enables holding the first mod-tap key
+        // by performing a tap-release-hold sequence.
+        // To use it: "&qt KEYCODE1 KEYCODE2"
 
-	macros {
-		// sometimes my device thinks a modifier is being held down
-		// pressing all modifiers fixes it.
-		unstick: unstick {
-			label = "ZM_unstick";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-		};
-	};
+        qt: quick_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "QUICK_TAP";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
 
-	combos {
-		compatible = "zmk,combos";
-		// both right thumb keys
-		combo_accent {
-			timeout-ms = <200>;
-			key-positions = <32 33>;
-			bindings = <&mo NUMB>;
-		};
-		// internal-left & external-right thumb keys
-		combo_sym2 {
-			timeout-ms = <200>;
-			key-positions = <31 33>;
-			bindings = <&mo SYM>;
-		};
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo FUNC>;
-		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
-	};
+        hml: hml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&none>, <&none>;
 
-	keymap {
-		compatible = "zmk,keymap";
-		// Base alpha layer
-		default_layer {
-			label = "Base";
-			bindings = <
-			&kp Q &kp W &kp F &kp P &kp B           &kp J &kp L  &kp U     &kp Y   &kp SINGLE_QUOTE
-			&kp A &kp R &kp S &kp T &kp G           &kp M &kp N  &kp E     &kp I &kp O
-			&bootloader &studio_unlock &bt BT_CLR &bt BT_SEL 0 &kp V           &kp K &kp H  &kp COMMA &kp DOT &kp FSLH
-							&mo MOUSE &qt LSHIFT SPACE           &kp SPACE &sl NAV
-			>;
-		};
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+            hold-while-undecided;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <5 6 7 8 9 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+        };
 
-		// Numbers and high frequency symbols
-		nav_layer {
-			label = "Nav";
-			bindings = <
-			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
-			&kp IT_LESS &kp IT_USD &kp IT_LPAR &kp IT_LBRC &kp IT_LBKT  &kp IT_EQL &kp IT_QUES &kp IT_SQUOT &kp IT_MINUS &kp IT_AST
-			&kp IT_GREAT &kp IT_PERC &kp IT_RPAR &kp IT_RBRC &kp IT_RBKT 	&kp IT_AT &kp IT_EXCL &kp IT_DQUOT &kp IT_PLUS &kp IT_FSLH
-														&mo EMACS  &mo SYM       &trans &trans
-			>;
-		};
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&none>, <&none>;
 
-		// Mouse
-		mouse_layer {
-			label = "Mouse";
-			bindings = <
-			&kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE    	&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
-			&sk LALT &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT 			&kp PG_DN &kp LEFT  &kp DOWN  &kp RIGHT   &kp DEL
-			&kp LC(Z)  &kp LC(X) &kp LC(C) &kp TAB   &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans &trans  &trans
-																		&trans &kp LCTRL    &kp ENTER  &mo EMACS 
-			>;
-		};
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+            hold-while-undecided;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+        };
+    };
 
-		// Emacs navigation aid
-		emacs_layer {
-			label = "Emacs";
-			bindings = <
-			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
-			&sk LALT &sk LGUI &sk LSHIFT &sk LCTRL &kp RALT     &kp F11 &kp F12  &kp PRINTSCREEN &trans &trans
-			&none &none &none &none &none				          &none &none &none &none &none 
-							  &none &none              &none &none  
-			>;
-		};
+    macros {
+        // sometimes my device thinks a modifier is being held down
+        // pressing all modifiers fixes it.
 
-		// Symbols
-		symbols_layer {
-			label = "Sym.";
-			bindings = <
-			&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
-			&kp IT_BKTK &kp IT_TILDE &kp IT_BSLH &kp IT_PIPE &kp IT_AND         &none &none &none &none &none
-			&none 			&none 			 &kp IT_SECT &kp IT_CCED &kp IT_DEG				  &none &none &none &none &none
-																	&none &none        	&none &none 
-			>;
-		};
+        unstick: unstick {
+            label = "ZM_unstick";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+        };
+    };
 
-		// Numbers
-		number_layer {
-			label = "Number";
-			bindings = <
-			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
-			&kp IT_AGRV &kp IT_IGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU &none &none &none &none &none
-			&none &none &none &kp IT_UGRV &none                         &none &none &none &none &none
-									&none &none                         &none &none 
-			>;
-		};
+    combos {
+        compatible = "zmk,combos";
 
-		// Function layer
-		funct_layer {
-				label = "Func";
-				bindings = <
-				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &unstick &none &bootloader 
-				&none &none &none &none      &bt BT_SEL 1 						  &bt BT_SEL 4 &none &none &none &none
-				&studio_unlock &none &none &none      &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &studio_unlock
-										&none &none                         &none &none 
-				>;
-		};
-	};
+        // both right thumb keys
+
+        combo_accent {
+            timeout-ms = <200>;
+            key-positions = <32 33>;
+            bindings = <&mo NUMB>;
+        };
+
+        // internal-left & external-right thumb keys
+
+        combo_sym2 {
+            timeout-ms = <200>;
+            key-positions = <31 33>;
+            bindings = <&mo SYM>;
+        };
+
+        // both left thumb keys
+
+        combo_settings {
+            timeout-ms = <200>;
+            key-positions = <30 31>;
+            bindings = <&mo FUNC>;
+        };
+
+        // left index & middle fingers (home-row)
+        // hold control & space for Adobe workflow
+
+        combo_ctrl_space {
+            timeout-ms = <200>;
+            key-positions = <12 13>;
+            bindings = <&kp LC(SPACE)>;
+            layers = <BASE>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Base alpha layer
+
+        default_layer {
+            label = "Base";
+            bindings = <
+&kp Q        &kp W           &kp F       &kp P         &kp B             &kp J      &kp L    &kp U      &kp Y    &kp SINGLE_QUOTE
+&hml 0 0     &kp R           &kp S       &kp T         &kp G             &kp M      &kp N    &kp E      &kp I    &kp O
+&bootloader  &studio_unlock  &bt BT_CLR  &bt BT_SEL 0  &kp V             &kp K      &kp H    &kp COMMA  &kp DOT  &kp FSLH
+                                         &mo MOUSE     &qt LSHIFT SPACE  &kp SPACE  &sl NAV
+            >;
+        };
+
+        // Numbers and high frequency symbols
+
+        nav_layer {
+            label = "Nav";
+            bindings = <
+&kp N1        &kp N2       &kp N3       &kp N4       &kp N5       &kp N6      &kp N7       &kp N8        &kp N9        &kp N0
+&kp IT_LESS   &kp IT_USD   &kp IT_LPAR  &kp IT_LBRC  &kp IT_LBKT  &kp IT_EQL  &kp IT_QUES  &kp IT_SQUOT  &kp IT_MINUS  &kp IT_AST
+&kp IT_GREAT  &kp IT_PERC  &kp IT_RPAR  &kp IT_RBRC  &kp IT_RBKT  &kp IT_AT   &kp IT_EXCL  &kp IT_DQUOT  &kp IT_PLUS   &kp IT_FSLH
+                                        &mo EMACS    &mo SYM      &trans      &trans
+            >;
+        };
+
+        // Mouse
+
+        mouse_layer {
+            label = "Mouse";
+            bindings = <
+&kp ESC    &kp C_PREV  &kp C_PP    &kp C_NEXT  &kp C_PAUSE  &kp PG_UP     &kp HOME   &kp UP    &kp END    &kp CAPS
+&sk LALT   &sk LGUI    &sk LSHIFT  &sk LCTRL   &kp RALT     &kp PG_DN     &kp LEFT   &kp DOWN  &kp RIGHT  &kp DEL
+&kp LC(Z)  &kp LC(X)   &kp LC(C)   &kp TAB     &kp LC(V)    &kp LC(BSPC)  &kp BSPC   &trans    &trans     &trans
+                                   &trans      &kp LCTRL    &kp ENTER     &mo EMACS
+            >;
+        };
+
+        // Emacs navigation aid
+
+        emacs_layer {
+            label = "Emacs";
+            bindings = <
+&kp F1    &kp F2    &kp F3      &kp F4     &kp F5    &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
+&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT  &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
+&none     &none     &none       &none      &none     &none    &none    &none            &none   &none
+                                &none      &none     &none    &none
+            >;
+        };
+
+        // Symbols
+
+        symbols_layer {
+            label = "Sym.";
+            bindings = <
+&kp IT_CARET  &kp IT_UNDER  &kp IT_PND   &kp IT_EUR   &kp IT_HASH  &none  &none  &none  &none  &none
+&kp IT_BKTK   &kp IT_TILDE  &kp IT_BSLH  &kp IT_PIPE  &kp IT_AND   &none  &none  &none  &none  &none
+&none         &none         &kp IT_SECT  &kp IT_CCED  &kp IT_DEG   &none  &none  &none  &none  &none
+                                         &none        &none        &none  &none
+            >;
+        };
+
+        // Numbers
+
+        number_layer {
+            label = "Number";
+            bindings = <
+&none        &none        &none        &kp IT_CEGR  &none        &none  &none  &none  &none  &none
+&kp IT_AGRV  &kp IT_IGRV  &kp IT_OGRV  &kp IT_EGRV  &kp IT_EACU  &none  &none  &none  &none  &none
+&none        &none        &none        &kp IT_UGRV  &none        &none  &none  &none  &none  &none
+                                       &none        &none        &none  &none
+            >;
+        };
+
+        // Function layer
+
+        funct_layer {
+            label = "Func";
+            bindings = <
+&bootloader     &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 3  &none  &unstick  &none  &bootloader
+&none           &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &none
+&studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
+                              &none       &none         &none         &none
+            >;
+        };
+    };
 };
