@@ -46,7 +46,7 @@
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -61,7 +61,7 @@
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -132,10 +132,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q        &kp W           &kp F       &kp P         &kp B             &kp J      &kp L    &kp U      &kp Y    &kp SINGLE_QUOTE
-&hml A LGUI     &hml R LALT           &hml S LCTL       &hml T LSHIFT         &kp G             &kp M      &kp N    &kp E      &kp I    &kp O
-&bootloader  &studio_unlock  &bt BT_CLR  &bt BT_SEL 0  &kp V             &kp K      &kp H    &kp COMMA  &kp DOT  &kp FSLH
-                                         &mo MOUSE     &qt LSHIFT SPACE  &kp SPACE  &sl NAV
+&kp Q        &kp W           &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
+&hml LGUI A  &hml LALT R     &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
+&bootloader  &studio_unlock  &bt BT_CLR    &bt BT_SEL 0  &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &kp FSLH
+                                           &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
             >;
         };
 
