@@ -97,7 +97,7 @@
 		};
 
 		// Numbers and high frequency symbols
-		sym_layer {
+		nav_layer {
 			label = "Nav";
 			bindings = <
 			&kp N1 &kp N2 &kp N3 &kp N4 &kp N5		                                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0
@@ -107,8 +107,8 @@
 			>;
 		};
 
-		// Main modifiers and arrow keys
-		ext_layer {
+		// Mouse
+		mouse_layer {
 			label = "Mouse";
 			bindings = <
 			&kp ESC  &kp C_PREV &kp C_PP  &kp C_NEXT  &kp C_PAUSE    	&kp PG_UP  &kp HOME &kp UP &kp END &kp CAPS
@@ -118,8 +118,8 @@
 			>;
 		};
 
-		// Function keys with modifiers
-		fnc_layer {
+		// Emacs navigation aid
+		emacs_layer {
 			label = "Emacs";
 			bindings = <
 			&kp F1 &kp F2 &kp F3 &kp F4 &kp F5                  &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 
@@ -129,8 +129,8 @@
 			>;
 		};
 
-		// Low frequency symbols.
-		symbols_2_layer {
+		// Symbols
+		symbols_layer {
 			label = "Sym.";
 			bindings = <
 			&kp IT_CARET &kp IT_UNDER &kp IT_PND &kp IT_EUR &kp IT_HASH         &none &none &none &none &none 
@@ -140,8 +140,8 @@
 			>;
 		};
 
-		// Used to type regional accents.
-		accent_layer {
+		// Numbers
+		number_layer {
 			label = "Number";
 			bindings = <
 			&none &none &none &kp IT_CEGR &none                         &none &none &none &none &none 
@@ -151,8 +151,8 @@
 			>;
 		};
 
-		// Used to change the keyboard's settings.
-		settings_layer {
+		// Function layer
+		funct_layer {
 				label = "Func";
 				bindings = <
 				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &unstick &none &bootloader 
