@@ -106,6 +106,15 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
+        tap_dance: tap_dance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_DANCE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <165>;
+        };
     };
 
     macros {
@@ -128,23 +137,23 @@
         combo_accent {
             timeout-ms = <200>;
             key-positions = <32 33>;
-            bindings = <&mo NUMB>;
+            bindings = <&mo 6>;
         };
 
         // internal-left & external-right thumb keys
 
         combo_sym2 {
             timeout-ms = <200>;
-            key-positions = <31 33>;
-            bindings = <&mo SYM>;
+            key-positions = <31 32>;
+            bindings = <&to 6>;
         };
 
         // both left thumb keys
 
-        combo_settings {
+        combo_emacs {
             timeout-ms = <200>;
             key-positions = <30 31>;
-            bindings = <&mo FUNC>;
+            bindings = <&mo 3>;
         };
 
         // left index & middle fingers (home-row)
@@ -179,10 +188,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q        &kp W           &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
-&hml LGUI A  &hml LALT R     &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&bootloader  &studio_unlock  &bt BT_CLR    &kp D         &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
-                                           &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
+&kp Q        &kp W        &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
+&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
+&kp Z        &kp X        &kp C         &kp D         &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
+                                        &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
             >;
         };
 
@@ -215,8 +224,8 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&to 0         &bootloader   &none             &none           &none   &kp NUMBER_1        &kp NUMBER_2   &kp UP_ARROW       &kp RC(W)             &kp RA(W)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &mo 7   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
+&to 0         &bootloader   &none             &none           &mo 7   &kp NUMBER_1        &kp NUMBER_2   &kp UP_ARROW       &kp RC(W)             &kp RA(W)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
 &none         &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                               &trans          &trans  &none               &none
             >;
@@ -227,10 +236,10 @@
         symbols_layer {
             label = "Sym.";
             bindings = <
-&kp IT_CARET  &kp IT_UNDER  &kp IT_PND   &kp IT_EUR   &kp IT_HASH  &none  &none  &none  &none  &none
-&kp IT_BKTK   &kp IT_TILDE  &kp IT_BSLH  &kp IT_PIPE  &kp IT_AND   &none  &none  &none  &none  &none
-&none         &none         &kp IT_SECT  &kp IT_CCED  &kp IT_DEG   &none  &none  &none  &none  &none
-                                         &none        &none        &none  &none
+&kp COLON        &kp SEMICOLON  &kp UNDERSCORE                 &kp GRAVE                                 &kp TILDE                                   &none  &none  &none  &none  &to 0
+&kp EXCLAMATION  &kp AT_SIGN    &kp HASH                       &kp DOLLAR                                &kp PERCENT                                 &none  &none  &none  &none  &none
+&kp CARET        &kp AMPERSAND  &tap_dance ASTERISK BACKSLASH  &tap_dance LEFT_PARENTHESIS LEFT_BRACKET  &tap_dance RIGHT_PARENTHESIS RIGHT_BRACKET  &none  &none  &none  &none  &none
+                                                               &tap_dance PIPE LEFT_BRACE                &tap_dance SLASH RIGHT_BRACE                &none  &none
             >;
         };
 
@@ -239,10 +248,10 @@
         number_layer {
             label = "Number";
             bindings = <
-&none        &none        &none        &kp IT_CEGR  &none        &none  &none  &none  &none  &none
-&kp IT_AGRV  &kp IT_IGRV  &kp IT_OGRV  &kp IT_EGRV  &kp IT_EACU  &none  &none  &none  &none  &none
-&none        &none        &none        &kp IT_UGRV  &none        &none  &none  &none  &none  &none
-                                       &none        &none        &none  &none
+&kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH     &none         &none           &kp UP_ARROW    &none            &to 0
+&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOT       &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &kp NUMBER_0  &none           &kp TAB         &none            &none
+                                          &kp ENTER     &kp EQUAL     &trans        &trans
             >;
         };
 
@@ -251,18 +260,18 @@
         funct_layer {
             label = "Func";
             bindings = <
-&bootloader     &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 3  &none  &unstick  &none  &bootloader
-&none           &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &none
-&studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
-                              &none       &none         &none         &none
+&none  &kp F7  &kp F8  &kp F9  &kp F10  &none   &none            &none              &none          &to 0
+&to 0  &kp F4  &kp F5  &kp F6  &kp F11  &none   &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_ALT  &kp RIGHT_GUI
+&none  &kp F1  &kp F2  &kp F3  &kp F12  &none   &none            &none              &none          &none
+                       &trans  &trans   &trans  &trans
             >;
         };
 
         settings {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp EXCL      &kp EXCLAMATION  &studio_unlock  &bootloader
-&trans  &trans  &trans  &trans  &trans  &trans           &trans        &trans           &trans          &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &unstick         &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 3    &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp EXCL      &kp EXCLAMATION  &unstick      &bootloader
+&trans  &trans  &trans  &trans  &trans  &trans           &trans        &trans           &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &studio_unlock   &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 3  &bt BT_SEL 4
                         &trans  &trans  &trans           &trans
             >;
         };
