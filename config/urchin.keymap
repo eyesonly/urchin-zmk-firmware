@@ -59,7 +59,7 @@
             flavor = "balanced";
             hold-while-undecided;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
         };
 
         hmr: hmr {
@@ -74,7 +74,7 @@
             flavor = "balanced";
             hold-while-undecided;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 30>;
         };
 
         alt_tab_override: alt_tab_override {
@@ -85,26 +85,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
             keep-mods = <(MOD_LALT)>;
-        };
-
-        freeze_layer_on: freeze_layer_on {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "FREEZE_LAYER_ON";
-            #binding-cells = <1>;
-        };
-
-        freeze_layer_flip: freeze_layer_flip {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "FREEZE_LAYER_FLIP";
-            #binding-cells = <1>;
-            toggle-mode = "flip";
-        };
-
-        freeze_layer_off: freeze_layer_off {
-            compatible = "zmk,behavior-toggle-layer";
-            label = "FREEZE_LAYER_OFF";
-            #binding-cells = <1>;
-            toggle-mode = "off";
         };
 
         tap_dance: tap_dance {
@@ -200,10 +180,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&to 0         &freeze_layer_on 1  &freeze_layer_off 1  &freeze_layer_flip 1  &freeze_layer_on 0    &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
-&kp LEFT_GUI  &kp LEFT_ALT        &kp LEFT_CONTROL     &kp LSHFT             &freeze_layer_off 0   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
-&none         &none               &none                &mo 7                 &freeze_layer_flip 0  &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
-                                                       &trans                &trans                &trans         &trans
+&to 0         &none         &none             &none      &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT  &none   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none         &none         &none             &mo 7      &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
+                                              &trans     &trans  &trans         &trans
             >;
         };
 
