@@ -86,6 +86,26 @@
             mods = <(MOD_LALT)>;
             keep-mods = <(MOD_LALT)>;
         };
+
+        freeze_layer_on: freeze_layer_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "FREEZE_LAYER_ON";
+            #binding-cells = <1>;
+        };
+
+        freeze_layer_flip: freeze_layer_flip {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "FREEZE_LAYER_FLIP";
+            #binding-cells = <1>;
+            toggle-mode = "flip";
+        };
+
+        freeze_layer_off: freeze_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "FREEZE_LAYER_OFF";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
     };
 
     macros {
@@ -144,6 +164,11 @@
             slow-release;
             layers = <0>;
         };
+
+        alt_f4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <9 29>;
+        };
     };
 
     keymap {
@@ -166,10 +191,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&to 0         &none         &none             &none      &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT  &tog 1  &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
-&none         &none         &none             &none      &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
-                                              &trans     &trans  &trans         &trans
+&to 0         &freeze_layer_on 1  &freeze_layer_off 1  &freeze_layer_flip 1  &freeze_layer_on 0    &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&kp LEFT_GUI  &kp LEFT_ALT        &kp LEFT_CONTROL     &kp LSHFT             &freeze_layer_off 0   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none         &none               &none                &mo 7                 &freeze_layer_flip 0  &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
+                                                       &trans                &trans                &trans         &trans
             >;
         };
 
@@ -178,7 +203,7 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&to 0         &none         &none             &none           &to 2   &kp EXCL        &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
+&to 0         &none         &none             &to 2           &to 2   &kp EXCL        &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
 &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
 &none         &none         &none             &none           &none   &msc SCRL_DOWN  &mkp MB3        &msc SCRL_LEFT  &msc SCRL_RIGHT  &none
                                               &trans          &trans  &mkp LCLK       &mkp MB2
@@ -190,8 +215,8 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&none         &bootloader   &none             &none           &none   &kp NUMBER_1        &kp NUMBER_2   &kp UP_ARROW       &kp RC(W)             &kp RA(W)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
+&to 0         &bootloader   &none             &none           &none   &kp NUMBER_1        &kp NUMBER_2   &kp UP_ARROW       &kp RC(W)             &kp RA(W)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &mo 7   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
 &none         &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                               &trans          &trans  &none               &none
             >;
@@ -230,6 +255,15 @@
 &none           &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &none
 &studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
                               &none       &none         &none         &none
+            >;
+        };
+
+        settings {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &kp EXCLAMATION  &kp EXCL      &kp EXCLAMATION  &studio_unlock  &bootloader
+&trans  &trans  &trans  &trans  &trans  &trans           &trans        &trans           &trans          &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &unstick         &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 3    &bt BT_SEL 4
+                        &trans  &trans  &trans           &trans
             >;
         };
     };
