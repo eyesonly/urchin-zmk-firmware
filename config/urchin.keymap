@@ -159,13 +159,6 @@
         };
 
         // both left thumb keys
-
-        combo_emacs {
-            timeout-ms = <200>;
-            key-positions = <30 31>;
-            bindings = <&mo 3>;
-        };
-
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
 
@@ -296,6 +289,15 @@
 &trans  &trans  &trans  &trans  &trans             &studio_unlock   &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 3  &bt BT_SEL 4
                         &trans  &trans             &trans           &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Emacs_conditional_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
