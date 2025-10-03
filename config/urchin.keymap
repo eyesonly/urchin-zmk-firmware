@@ -103,10 +103,20 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <165>;
+            quick-tap-ms = <165>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
+        };
+
+        alt_tab_override2: alt_tab_override2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_TAB_OVERRIDE2";
+            bindings = <&kp DOT>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
     };
 
@@ -183,6 +193,11 @@
             bindings = <&tog 5>;
             key-positions = <33 26>;
         };
+
+        alt_f4_2 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <32 4>;
+        };
     };
 
     keymap {
@@ -255,7 +270,7 @@
             bindings = <
 &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &none         &none           &kp UP_ARROW    &none            &to 0
 &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOT    &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp NUMBER_0  &none           &kp TAB         &none            &none
+&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp NUMBER_0  &kp TAB         &kp TAB         &none            &none
                                           &kp NUMBER_0  &kp RET    &trans        &trans
             >;
         };
