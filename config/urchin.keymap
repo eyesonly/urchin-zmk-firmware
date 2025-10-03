@@ -96,6 +96,18 @@
             #binding-cells = <2>;
             tapping-term-ms = <165>;
         };
+
+        lt_repeat: lt_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_REPEAT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -181,10 +193,10 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q        &kp W        &kp F         &kp P         &kp B      &kp J        &kp L         &kp U         &kp Y             &kp SINGLE_QUOTE
-&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G      &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&kp Z        &kp X        &kp C         &kp D         &kp V      &kp K        &kp H         &kp COMMA     &kp DOT           &alt_tab_override
-                                        &lt 1 BSPC    &lt 2 DEL  &lt 4 ENTER  &lt 5 SPACE
+&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y             &kp SINGLE_QUOTE
+&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T       &kp G             &kp M               &hmr RSHFT N        &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
+&kp Z        &kp X        &kp C         &kp D              &kp V             &kp K               &kp H               &kp COMMA     &kp DOT           &alt_tab_override
+                                        &lt_repeat 1 BSPC  &lt_repeat 2 DEL  &lt_repeat 4 ENTER  &lt_repeat 5 SPACE
             >;
         };
 
