@@ -175,7 +175,7 @@
             layers = <0>;
             timeout-ms = <50>;
             slow-release;
-            require-prior-idle-ms = <1>;
+            require-prior-idle-ms = <50>;
         };
 
         toggle_emacs_layer {
@@ -222,10 +222,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&to 0         &none         &none             &none      &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT  &none   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
-&none         &none         &none             &mo 7      &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
-                                              &trans     &trans  &trans         &trans
+&to 0         &none         &none             &kp PRINTSCREEN  &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT        &none   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none         &none         &none             &none            &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
+                                              &trans           &trans  &trans         &trans
             >;
         };
 
