@@ -210,9 +210,9 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y             &kp SINGLE_QUOTE
-&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T       &kp G             &kp M               &hmr RSHFT N        &hmr RCTRL E  &hmr RIGHT_ALT I  &hmr RGUI O
-&kp Z        &kp X        &kp C         &kp D              &kp V             &kp K               &kp H               &kp COMMA     &kp DOT           &alt_tab_override
+&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y               &kp SINGLE_QUOTE
+&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T       &kp G             &kp M               &hmr RSHFT N        &hmr RCTRL E  &hmr RIGHT_ALT I    &hmr RGUI O
+&kp Z        &kp X        &kp C         &kp D              &kp V             &kp K               &kp H               &kp COMMA     &alt_tab_override2  &alt_tab_override
                                         &lt_repeat 1 BSPC  &lt_repeat 2 DEL  &lt_repeat 4 ENTER  &lt_repeat 5 SPACE
             >;
         };
