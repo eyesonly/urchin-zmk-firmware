@@ -215,7 +215,7 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&to 0         &none         &none             &kp PRINTSCREEN  &none   &caps_word     &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&to 0         &none         &none             &kp PRINTSCREEN  &none   &kp CAPSLOCK   &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
 &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LSHFT        &none   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
 &none         &none         &none             &none            &none   &kp PAGE_DOWN  &kp TAB         &kp INSERT      &kp HOME         &kp END
                                               &trans           &trans  &trans         &trans
@@ -227,7 +227,7 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&to 0         &none         &none             &none           &none   &kp EXCL        &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
+&to 0         &none         &none             &none           &none   &caps_word      &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
 &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
 &none         &none         &none             &none           &none   &msc SCRL_DOWN  &mkp MB3        &msc SCRL_LEFT  &msc SCRL_RIGHT  &none
                                               &trans          &trans  &mkp LCLK       &mkp MB2
