@@ -169,7 +169,7 @@
 
         tog_numbers {
             bindings = <&tog 5>;
-            key-positions = <33 26>;
+            key-positions = <33 6>;
         };
 
         alt_f4_two {
@@ -179,7 +179,7 @@
 
         toggle_emacs {
             bindings = <&tog 3>;
-            key-positions = <23 30>;
+            key-positions = <30 3>;
         };
     };
 
