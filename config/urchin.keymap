@@ -144,12 +144,6 @@
 
         // both right thumb keys
         // internal-left & external-right thumb keys
-
-        combo_to_func {
-            key-positions = <31 32>;
-            bindings = <&tog 6>;
-        };
-
         // both left thumb keys
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
@@ -165,21 +159,6 @@
         alt_f4 {
             bindings = <&kp LA(F4)>;
             key-positions = <9 29>;
-        };
-
-        tog_numbers {
-            bindings = <&tog 5>;
-            key-positions = <33 6>;
-        };
-
-        alt_f4_two {
-            bindings = <&kp LA(F4)>;
-            key-positions = <32 4>;
-        };
-
-        toggle_emacs {
-            bindings = <&tog 3>;
-            key-positions = <30 3>;
         };
     };
 
@@ -215,7 +194,7 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&to 0         &none         &none             &none           &none   &caps_word      &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
+&to 0         &none         &none             &none           &to 3   &caps_word      &tog 2          &mmv MOVE_UP    &kp RC(END)      &kp RC(INSERT)
 &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LS(INSERT)
 &none         &none         &none             &none           &none   &msc SCRL_DOWN  &mkp MB3        &msc SCRL_LEFT  &msc SCRL_RIGHT  &none
                                               &trans          &trans  &mkp LCLK       &mkp MB2
@@ -239,7 +218,7 @@
         symbols_layer {
             label = "Sym.";
             bindings = <
-&kp COLON        &kp SEMICOLON  &kp UNDERSCORE                 &kp GRAVE                                 &kp TILDE                                   &none   &none   &none  &none  &to 0
+&kp COLON        &kp SEMICOLON  &kp UNDERSCORE                 &kp GRAVE                                 &kp TILDE                                   &to 5   &to 6   &none  &none  &to 0
 &kp EXCLAMATION  &kp AT_SIGN    &kp HASH                       &kp DOLLAR                                &kp PERCENT                                 &to 0   &none   &none  &none  &none
 &kp CARET        &kp AMPERSAND  &tap_dance BACKSLASH ASTERISK  &tap_dance LEFT_BRACKET LEFT_PARENTHESIS  &tap_dance RIGHT_BRACKET RIGHT_PARENTHESIS  &none   &none   &none  &none  &none
                                                                &tap_dance PIPE LEFT_BRACE                &tap_dance SLASH RIGHT_BRACE                &trans  &trans
@@ -252,7 +231,7 @@
             label = "Number";
             bindings = <
 &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &none         &none           &kp UP_ARROW    &none            &to 0
-&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOT    &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOT    &to 0         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
 &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &kp NUMBER_0  &kp TAB         &kp TAB         &none            &none
                                           &kp NUMBER_0  &kp RET    &trans        &trans
             >;
