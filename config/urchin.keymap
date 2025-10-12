@@ -188,6 +188,11 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <1>;
         };
+
+        momentary_functional_layer {
+            bindings = <&mo 6>;
+            key-positions = <32 33>;
+        };
     };
 
     keymap {
@@ -198,7 +203,7 @@
         default_layer {
             label = "Base";
             bindings = <
-&to_tap 3 Q  &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y               &to_tap 6 SINGLE_QUOTE
+&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y               &kp SINGLE_QUOTE
 &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T       &kp G             &kp M               &hmr RSHFT N        &hmr RCTRL E  &hmr RIGHT_ALT I    &hmr RGUI O
 &kp Z        &kp X        &kp C         &kp D              &kp V             &kp K               &kp H               &kp COMMA     &alt_tab_override2  &alt_tab_override
                                         &lt_repeat 1 BSPC  &lt_repeat 2 DEL  &lt_repeat 4 ENTER  &lt_repeat 5 SPACE
@@ -234,7 +239,7 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&to 0         &bootloader   &mo 7             &none           &to 6   &tog 6              &other_window  &kp UP_ARROW       &kp RC(W)             &kp RA(W)
+&to 0         &bootloader   &mo 7             &none           &none   &none               &other_window  &kp UP_ARROW       &kp RC(W)             &kp RA(W)
 &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
 &none         &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                               &trans          &trans  &trans              &trans
@@ -293,11 +298,6 @@
         Emacs_conditional_layer {
             if-layers = <1 2>;
             then-layer = <3>;
-        };
-
-        Func_conditional_layer {
-            if-layers = <4 5>;
-            then-layer = <6>;
         };
     };
 };
