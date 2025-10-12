@@ -176,13 +176,17 @@
         to_emacs {
             bindings = <&to 3>;
             key-positions = <23 30>;
-            layers = <0 1>;
+            layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <1>;
         };
 
         to_func {
             bindings = <&tog 6>;
             key-positions = <31 32>;
-            layers = <0 2 4>;
+            layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <1>;
         };
     };
 
