@@ -196,6 +196,11 @@
             bindings = <&mo 3>;
             key-positions = <31 30>;
         };
+
+        to_num {
+            bindings = <&to 5>;
+            key-positions = <6 33>;
+        };
     };
 
     keymap {
