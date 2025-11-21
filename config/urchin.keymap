@@ -128,6 +128,42 @@
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
         };
+
+        emacs_up: emacs_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EMACS_UP";
+            bindings = <&kp UP_ARROW>, <&kp LA(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        emacs_down: emacs_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EMACS_DOWN";
+            bindings = <&kp DOWN_ARROW>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        emacs_left: emacs_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EMACS_LEFT";
+            bindings = <&kp LEFT_ARROW>, <&kp RA(B)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        emacs_right: emacs_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EMACS_RIGHT";
+            bindings = <&kp RIGHT_ARROW>, <&kp RA(F)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
@@ -247,10 +283,10 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&to 0         &bootloader   &mo 7             &none           &none   &kp LA(SEMI)        &other_window  &kp UP_ARROW       &kp RC(W)             &kp RA(W)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &to 0   &kp LC(A)           &kp RA(B)      &kp DOWN_ARROW     &kp RA(F)             &kp RC(E)
-&none         &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
-                                              &trans          &trans  &trans              &trans
+&to 0  &bootloader   &mo 7             &none           &none   &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
+&to 0  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none   &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
+&none  &none         &none             &none           &none   &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+                                       &trans          &trans  &trans              &trans
             >;
         };
 
