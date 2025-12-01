@@ -28,7 +28,7 @@
 include:
 
     # Urchin
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: urchin_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
