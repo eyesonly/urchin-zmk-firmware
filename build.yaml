@@ -28,7 +28,7 @@
 include:
 
     # Urchin
-  - board: nrf9160dk_nrf52840
+  - board: nrf52840dongle_nrf52840
     shield: urchin_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
