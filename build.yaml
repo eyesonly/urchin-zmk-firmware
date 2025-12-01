@@ -28,7 +28,7 @@
 include:
 
     # Urchin
-  - board: nice_nano
+  - board: seeeduino_xiao
     shield: urchin_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
