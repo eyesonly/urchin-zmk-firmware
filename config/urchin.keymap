@@ -189,6 +189,13 @@
             bindings = <&kp LC(X) &kp K>;
             label = "KILL_BUFFER";
         };
+
+        save_buffer: save_buffer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X) &kp LC(S)>;
+            label = "SAVE_BUFFER";
+        };
     };
 
     combos {
@@ -289,10 +296,10 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&to 0  &bootloader   &mo 7             &none           &kill_buffer  &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
-&to 0  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none         &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
-&none  &none         &none             &none           &none         &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
-                                       &trans          &trans        &trans              &trans
+&to 0        &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer  &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
+&to 0        &kp LEFT_ALT      &kp LEFT_CONTROL  &kp LEFT_SHIFT    &mo 7         &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
+&bootloader  &kp LA(NUMBER_4)  &none             &none             &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+                                                 &trans            &trans        &trans              &trans
             >;
         };
 
