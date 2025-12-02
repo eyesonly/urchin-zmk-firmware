@@ -250,6 +250,11 @@
             bindings = <&to 5>;
             key-positions = <6 33>;
         };
+
+        bootloader {
+            bindings = <&bootloader>;
+            key-positions = <29 0>;
+        };
     };
 
     keymap {
