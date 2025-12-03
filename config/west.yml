@@ -16,7 +16,7 @@ manifest:
       url-base: https://github.com/badjeff
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: eyesonly
       revision: main
       import: app/west.yml
     - name: urchin-zmk-module
