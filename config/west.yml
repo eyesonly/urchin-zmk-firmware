@@ -14,7 +14,7 @@ manifest:
       url-base: https://github.com/M165437
     - name: badjeff
       url-base: https://github.com/badjeff
-projects:
+  projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
