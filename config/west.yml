@@ -12,7 +12,9 @@ manifest:
       # nice-view-gem
     - name: m165437
       url-base: https://github.com/M165437
-  projects:
+    - name: badjeff
+      url-base: https://github.com/badjeff
+projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
@@ -26,5 +28,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-  self:
+    - name: zmk-behavior-battery-percentage-printer
+      remote: badjeff
+      revision: main
+self:
     path: config

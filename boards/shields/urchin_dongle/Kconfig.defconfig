@@ -19,4 +19,7 @@ config ZMK_SPLIT
 config ZMK_BLE
     default y
 
+config CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+    default y
+
 endif
