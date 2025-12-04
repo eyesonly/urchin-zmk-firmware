@@ -30,7 +30,8 @@ The keymap is defined in `config/urchin.keymap`.
 | **`&numb`** (Numbers) | Numbers (0-9) | 
 | **`&func`** (Function-keys) | Function keys (F1-F12). | 
 
-![Alt text for the image](path/to/image.png "Optional title text")
+These are screenshots from Nic Coutsos' wonderful keymap editor. `config/urchin.keymap` is the canonical up to date source, not these images.
+
 ![Base](images/base.jpg)   
 ![Nav](images/nav.jpg)   
 ![Mouse](images/mouse.jpg)  
