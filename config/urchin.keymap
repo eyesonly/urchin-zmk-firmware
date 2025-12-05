@@ -314,7 +314,7 @@
             bindings = <
 &to 0        &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer  &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
 &to 0        &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &mo 7         &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
-&bootloader  &kp LA(NUMBER_4)  &none             &none             &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+&bootloader  &kp LA(NUMBER_4)  &none             &kp LC(G)         &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                                  &trans            &trans        &trans              &trans
             >;
         };
