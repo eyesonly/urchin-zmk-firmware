@@ -314,7 +314,7 @@
             bindings = <
 &to 0        &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer  &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
 &to 0        &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &mo 7         &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
-&bootloader  &kp LA(NUMBER_4)  &none             &none             &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+&bootloader  &kp LA(NUMBER_4)  &none             &kp LC(G)         &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                                  &trans            &trans        &trans              &trans
             >;
         };
@@ -327,7 +327,7 @@
 &kp COLON        &kp SEMICOLON  &kp UNDERSCORE                 &kp GRAVE                                 &kp TILDE                                   &to 5   &none   &none  &none  &to 0
 &kp EXCLAMATION  &kp AT_SIGN    &kp HASH                       &kp DOLLAR                                &kp PERCENT                                 &to 0   &none   &none  &none  &none
 &kp CARET        &kp AMPERSAND  &tap_dance BACKSLASH ASTERISK  &tap_dance LEFT_BRACKET LEFT_PARENTHESIS  &tap_dance RIGHT_BRACKET RIGHT_PARENTHESIS  &none   &none   &none  &none  &none
-                                                               &tap_dance PIPE LEFT_BRACE                &tap_dance SLASH RIGHT_BRACE                &trans  &trans
+                                                               &tap_dance LEFT_BRACE PIPE                &tap_dance RIGHT_BRACE SLASH                &trans  &trans
             >;
         };
 
@@ -336,10 +336,10 @@
         number_layer {
             label = "Number";
             bindings = <
-&kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &none         &none           &kp UP_ARROW    &none            &to 0
-&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL  &to 0         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT    &kp NUMBER_0  &kp TAB         &kp TAB         &none            &none
-                                          &kp NUMBER_0  &kp RET    &trans        &trans
+&kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &none          &none           &kp UP_ARROW    &none            &to 0
+&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL  &to 0          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &mo 7
+&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT    &none          &kp TAB         &kp TAB         &none            &none
+                                          &kp NUMBER_0  &kp RET    &kp BACKSPACE  &kp DELETE
             >;
         };
 
@@ -348,7 +348,7 @@
         funct_layer {
             label = "Func";
             bindings = <
-&to 0  &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &none          &to 0
+&to 0  &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &to 7          &to 0
 &to 0  &kp F4  &kp F5  &kp F6  &kp F11  &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
 &to 3  &kp F1  &kp F2  &kp F3  &kp F12  &none   &none              &none            &none          &none
                        &trans  &trans   &trans  &trans
@@ -358,7 +358,7 @@
         settings {
             bindings = <
 &bootloader  &trans  &trans  &trans  &ext_power EP_TOG  &kp EXCLAMATION  &kp EXCL      &kp EXCLAMATION  &unstick      &bootloader
-&trans       &trans  &trans  &trans  &trans             &soft_off        &trans        &trans           &trans        &bt BT_CLR
+&trans       &trans  &trans  &trans  &to 0              &soft_off        &trans        &trans           &trans        &bt BT_CLR
 &trans       &trans  &trans  &trans  &trans             &studio_unlock   &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 3  &bt BT_SEL 4
                              &bapp   &trans             &trans           &bapp
             >;
