@@ -205,6 +205,84 @@
                 max-prior-idle-ms = <500>;
                 bindings = <&kp O &kp N>;
             };
+
+            akt_dl {
+                trigger-keys = <L>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp K>;
+            };
+
+            akt_dm {
+                trigger-keys = <M>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp E &kp N &kp T>;
+            };
+
+            akt_dn {
+                trigger-keys = <N>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp I &kp O &kp N>;
+            };
+
+            akt_do {
+                trigger-keys = <O>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp A>;
+            };
+
+            akt_dp {
+                trigger-keys = <P>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp Y>;
+            };
+
+            akt_dq {
+                trigger-keys = <Q>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp U &kp E &kp N>;
+            };
+
+            akt_rh {
+                trigger-keys = <R>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp L>;
+            };
+
+            akt_ds {
+                trigger-keys = <S>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp K>;
+            };
+
+            akt_dt {
+                trigger-keys = <T>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp M &kp E &kp N &kp T>;
+            };
+
+            akt_du {
+                trigger-keys = <U>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp E>;
+            };
+
+            akt_dy {
+                trigger-keys = <Y>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp P>;
+            };
+
+            akt_dsp {
+                trigger-keys = <SPACE>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp T &kp H &kp E>;
+            };
+
+            akt_ddot {
+                trigger-keys = <DOT>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp DOT &kp SLASH>;
+            };
         };
     };
 
