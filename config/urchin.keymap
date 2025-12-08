@@ -164,6 +164,17 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+
+        ak_m: ak_m {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp F21>;
+
+            akt_ah { trigger-keys = <A>; max-prior-idle-ms = <50>; bindings = <&kp O>; };
+            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+            akt_dh { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp Y>; };
+        };
     };
 
     macros {
@@ -276,7 +287,7 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp L               &kp U         &kp Y               &kp SINGLE_QUOTE
+&kp Q        &kp W        &kp F         &kp P              &kp B             &kp J               &kp F21               &kp U         &kp Y               &kp SINGLE_QUOTE
 &hml LGUI A  &hml LALT R  &hml LSHFT S  &hml LCTRL T       &kp G             &kp M               &hmr RCTRL N        &hmr RSHFT E  &hmr RIGHT_ALT I    &hmr RGUI O
 &kp Z        &kp X        &kp C         &kp D              &kp V             &kp K               &kp H               &kp COMMA     &alt_tab_override2  &alt_tab_override
                                         &lt_repeat 1 BSPC  &lt_repeat 2 DEL  &lt_repeat 4 ENTER  &lt_repeat 5 SPACE

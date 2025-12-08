@@ -17,6 +17,8 @@ manifest:
       url-base: https://github.com/M165437
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -38,5 +40,8 @@ manifest:
     - name: zmk-behavior-battery-percentage-printer
       remote: badjeff
       revision: main
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main # set to same as ZMK version above      
 self:
     path: config
