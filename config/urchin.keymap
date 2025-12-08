@@ -168,7 +168,7 @@
         magic: magic {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp ASTERISK>;
+            bindings = <&kp SINGLE_QUOTE>;
 
             akt_ah {
                 trigger-keys = <A>;
@@ -186,6 +186,24 @@
                 trigger-keys = <D>;
                 max-prior-idle-ms = <500>;
                 bindings = <&kp Y>;
+            };
+
+            akt_eh {
+                trigger-keys = <E>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp U>;
+            };
+
+            akt_gh {
+                trigger-keys = <G>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp Y>;
+            };
+
+            akt_di {
+                trigger-keys = <I>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp O &kp N>;
             };
         };
     };
