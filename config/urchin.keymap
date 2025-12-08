@@ -313,7 +313,7 @@
             label = "Emacs";
             bindings = <
 &to 0        &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer  &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
-&to 0        &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &mo 7         &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
+&tog 3       &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &tog 3        &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
 &bootloader  &kp LA(NUMBER_4)  &none             &kp LC(G)         &save_buffer  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
                                                  &trans            &trans        &trans              &trans
             >;
@@ -348,10 +348,10 @@
         funct_layer {
             label = "Func";
             bindings = <
-&to 0  &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &to 7          &to 0
-&to 0  &kp F4  &kp F5  &kp F6  &kp F11  &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
-&to 3  &kp F1  &kp F2  &kp F3  &kp F12  &none   &none              &none            &none          &none
-                       &trans  &trans   &trans  &trans
+&to 0   &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &to 7          &to 0
+&to 6   &kp F4  &kp F5  &kp F6  &kp F11  &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
+&tog 6  &kp F1  &kp F2  &kp F3  &kp F12  &none   &none              &none            &none          &none
+                        &trans  &trans   &trans  &trans
             >;
         };
 
