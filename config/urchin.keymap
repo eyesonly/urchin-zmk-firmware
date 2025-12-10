@@ -413,10 +413,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&to 0         &none         &none      &kp PRINTSCREEN   &none   &kp CAPSLOCK   &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT  &kp LEFT_CONTROL  &to 0   &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
-&none         &none         &none      &tog 3            &none   &kp PAGE_DOWN  &kp TAB         &kp HOME        &kp END          &kp INS
-                                       &trans            &trans  &trans         &trans
+&to 0         &none         &none      &none             &kp PRINTSCREEN  &kp CAPSLOCK   &kp ESC         &kp UP_ARROW    &kp RC(X)        &kp RC(C)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT  &kp LEFT_CONTROL  &to 0            &kp PAGE_UP    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RC(V)
+&none         &none         &none      &none             &none            &kp PAGE_DOWN  &kp TAB         &kp HOME        &kp END          &kp INS
+                                       &trans            &trans           &trans         &trans
             >;
         };
 
