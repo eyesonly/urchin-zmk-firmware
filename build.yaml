@@ -34,7 +34,7 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: xiao_dongle
   - board: nice_nano@2.0.0
-    shield: urchin_dongle
+    shield: xiao_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: urchin_dongle
