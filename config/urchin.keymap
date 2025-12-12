@@ -102,7 +102,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <165>;
-            quick-tap-ms = <165>;
+            quick-tap-ms = <80>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
         };
