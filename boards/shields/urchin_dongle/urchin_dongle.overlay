@@ -7,6 +7,20 @@
         zmk,physical-layout = &physical_layout0;  // New item added
     };
 
+    leds {
+        compatible = "gpio-leds";
+        user_led: led_0 {
+            // **CHANGE '15' to an unused GPIO pin on your board.**
+            // This pin will not actually be wired, but needs to be defined
+            // for the indicator to work.
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+            label = "User LED";
+    };
+
+    aliases {
+        indicator-led = &user_led;
+    };
+    
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
