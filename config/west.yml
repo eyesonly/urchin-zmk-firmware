@@ -20,7 +20,7 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
     - name: bluedrink9
-      url-base: https://github.com/bluedrink      
+      url-base: https://github.com/BlueDrink9
   projects:
     - name: zmk
       remote: zmkfirmware
