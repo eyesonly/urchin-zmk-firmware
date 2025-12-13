@@ -28,11 +28,11 @@
 include:
 
     # Urchin
-  # - board: xiao_ble
-  #   shield: xiao_dongle rgbled_adapter
-  #   snippet: studio-rpc-usb-uart
-  #   cmake-args: -DCONFIG_ZMK_STUDIO=y
-  #   artifact-name: xiao_dongle
+  - board: xiao_ble
+    shield: urchin_dongle
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: xiao_dongle
   - board: nice_nano@2.0.0
     shield: urchin_dongle
     snippet: studio-rpc-usb-uart
