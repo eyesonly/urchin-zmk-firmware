@@ -26,10 +26,6 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # - name: zmk
-    #   remote: zmkfirmware
-    #   revision: main
-    #   import: app/west.yml
     - name: urchin-zmk-module
       remote: duckyb
       revision: main
@@ -45,8 +41,8 @@ manifest:
     - name: zmk-adaptive-key
       remote: urob
       revision: main # set to same as ZMK version above      
-    # - name: zmk-poor-mans-led-indicator
-    #   remote: eyesonly
-    #   revision: main
+    - name: zmk-poor-mans-led-indicator
+      remote: eyesonly
+      revision: main
 self:
     path: config
