@@ -19,8 +19,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: urob
       url-base: https://github.com/urob
-    # - name: bluedrink9
-    #   url-base: https://github.com/BlueDrink9
+    - name: eyesonly
+      url-base: https://github.com/eyesonly
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -45,7 +45,7 @@ manifest:
     - name: zmk-adaptive-key
       remote: urob
       revision: main # set to same as ZMK version above      
-    - name: poor-mans-led-indicator-zmk
+    - name: zmk-poor-mans-led-indicator
       remote: eyesonly
       revision: main
 self:
