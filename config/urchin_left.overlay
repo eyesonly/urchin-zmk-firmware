@@ -13,6 +13,9 @@
      * GPIO Key for Wakeup
      * This defines the physical pin that will trigger the wake-up
      * Using Row 0 (pin 6) which includes the top-left key
+     * 
+     * IMPORTANT: This GPIO key is ONLY used during soft-off state for wake-up.
+     * It does NOT interfere with normal keyboard operation.
      */
     keys {
         compatible = "gpio-keys";
@@ -22,30 +25,10 @@
     };
 
     /*
-     * Wakeup KScan Driver
-     * Creates a minimal kscan instance for the wake-up key
-     */
-    wakeup_scan_left: wakeup_scan_left {
-        compatible = "zmk,kscan-gpio-direct";
-        input-keys = <&soft_off_gpio_key_left>;
-        wakeup-source;
-    };
-
-    /*
-     * KScan Sideband Behavior Wrapper
-     * This wraps the wakeup kscan to enable it properly
-     */
-    side_band_behavior_triggers_left: side_band_behavior_triggers_left {
-        compatible = "zmk,kscan-sideband-behaviors";
-        kscan = <&wakeup_scan_left>;
-        auto-enable;
-        wakeup-source;
-    };
-
-    /*
      * Soft-Off Waker Configuration
-     * This device is enabled when entering soft-off and handles the wake logic
-     * Includes all column pins from the left half matrix
+     * This device is ONLY enabled when entering soft-off and handles the wake logic.
+     * It is disabled during normal keyboard operation, so it doesn't interfere with the matrix.
+     * Includes all column pins from the left half matrix.
      */
     wakeup_trigger_left: wakeup_trigger_left {
         compatible = "zmk,gpio-key-wakeup-trigger";
