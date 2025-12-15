@@ -391,6 +391,11 @@
             bindings = <&bootloader>;
             key-positions = <5 6 29>;
         };
+
+        soft_off_combo {
+            bindings = <&soft_off>;
+            key-positions = <14 15 16>;
+        };
     };
 
     keymap {
