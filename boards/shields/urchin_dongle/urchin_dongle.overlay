@@ -9,7 +9,6 @@
     };
 
     // --- Indicator LED Configuration ---
-#ifndef CONFIG_BOARD_XIAO_BLE
     leds {
         compatible = "gpio-leds";
         user_led: led_0 {
@@ -21,7 +20,6 @@
     aliases {
         indicator-led = &user_led;
     };
-#endif
     // ------------------------------------
 
     mock_kscan: mock_kscan_0 {
