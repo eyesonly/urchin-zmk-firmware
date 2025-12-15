@@ -8,20 +8,6 @@
         zmk,physical-layout = &physical_layout0;  // New item added
     };
 
-    // --- Indicator LED Configuration ---
-    leds {
-        compatible = "gpio-leds";
-        user_led: led_0 {
-            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
-            label = "User LED";
-        };
-    };
-
-    aliases {
-        indicator-led = &user_led;
-    };
-    // ------------------------------------
-
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
