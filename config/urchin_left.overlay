@@ -47,7 +47,7 @@
      * This device is enabled when entering soft-off and handles the wake logic
      * Includes all column pins from the left half matrix
      */
-    soft_off_wakers_left {
+    wakeup_trigger_left: wakeup_trigger_left {
         compatible = "zmk,gpio-key-wakeup-trigger";
         trigger = <&soft_off_gpio_key_left>;
         wakeup-source;
@@ -70,6 +70,6 @@
      */
     soft_off_wakers {
         compatible = "zmk,soft-off-wakeup-sources";
-        wakeup-sources = <&soft_off_wakers_left>;
+        wakeup-sources = <&wakeup_trigger_left>;
     };
 };
