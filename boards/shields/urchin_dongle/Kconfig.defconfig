@@ -20,3 +20,17 @@ config ZMK_BLE
     default y
 
 endif
+
+if SHIELD_URCHIN_DONGLE
+
+config BOARD_XIAO_BLE
+    bool "XIAO BLE Board Detection"
+    default y if BOARD_XIAO_BLE
+    default n
+    help
+      This option is automatically enabled when building with the
+      Seeed XIAO BLE board. It is used to conditionally exclude
+      certain hardware configurations (like LEDs) that are not
+      compatible with the XIAO BLE.
+
+endif 
