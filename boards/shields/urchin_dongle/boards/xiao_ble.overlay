@@ -1,0 +1,9 @@
+/ {
+    /delete-node/ leds;
+};
+
+/ {
+    aliases {
+        /delete-property/ indicator-led;
+    };
+};
