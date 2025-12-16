@@ -1,22 +1,4 @@
-/*
- * Urchin Left Half - Soft-Off Wakeup Configuration
- * 
- * This file configures the top-left key (Row 0, Column 0) to wake the left half from soft-off state.
- * 
- * Based on the actual Urchin left half GPIO configuration:
- * - Row 0 (top-left key row): Pin 6
- * - All columns: Pins 18, 15, 14, 16, 10
- */
-
 / {
-    /* 
-     * GPIO Key for Wakeup
-     * This defines the physical pin that will trigger the wake-up
-     * Using Row 0 (pin 6) which includes the top-left key
-     * 
-     * IMPORTANT: This GPIO key is ONLY used during soft-off state for wake-up.
-     * It does NOT interfere with normal keyboard operation.
-     */
     keys {
         compatible = "gpio-keys";
         soft_off_gpio_key_left: soft_off_gpio_key_left {
@@ -24,21 +6,11 @@
         };
     };
 
-    /*
-     * Soft-Off Waker Configuration
-     * This device is ONLY enabled when entering soft-off and handles the wake logic.
-     * It is disabled during normal keyboard operation, so it doesn't interfere with the matrix.
-     * Includes all column pins from the left half matrix.
-     */
     wakeup_trigger_left: wakeup_trigger_left {
         compatible = "zmk,gpio-key-wakeup-trigger";
         trigger = <&soft_off_gpio_key_left>;
         wakeup-source;
         
-        /*
-         * All column output pins from left half
-         * These must be active for the keyboard to detect the key press during wake
-         */
         extra-gpios = 
             <&pro_micro 18 GPIO_ACTIVE_HIGH>,
             <&pro_micro 15 GPIO_ACTIVE_HIGH>,
@@ -47,10 +19,6 @@
             <&pro_micro 10 GPIO_ACTIVE_HIGH>;
     };
 
-    /*
-     * Soft-Off Wakeup Sources Registration
-     * This tells ZMK which devices should be enabled during soft-off for wake-up
-     */
     soft_off_wakers {
         compatible = "zmk,soft-off-wakeup-sources";
         wakeup-sources = <&wakeup_trigger_left>;
