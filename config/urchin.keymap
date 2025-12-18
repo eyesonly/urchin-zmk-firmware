@@ -284,6 +284,15 @@
                 bindings = <&kp DOT &kp SLASH>;
             };
         };
+
+        override_softoff: override_softoff {
+            compatible = "zmk,behavior-mod-morph";
+            label = "OVERRIDE_SOFTOFF";
+            bindings = <&kp COMMA>, <&soft_off>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RGUI)>;
+        };
     };
 
     macros {
@@ -406,9 +415,9 @@
         default_layer {
             label = "Base";
             bindings = <
-&kp V        &kp M        &kp L         &kp C              &kp P             &kp B               &magic              &kp U         &kp O               &kp Q
-&hml LGUI S  &hml LALT T  &hml LSHFT R  &hml LCTRL D       &kp Y             &kp F               &hmr RCTRL N        &hmr RSHFT E  &hmr RIGHT_ALT A    &hmr RGUI I
-&kp X        &kp K        &kp J         &kp G              &kp W             &kp Z               &kp H               &kp COMMA     &alt_tab_override2  &alt_tab_override
+&kp V        &kp M        &kp L         &kp C              &kp P             &kp B               &magic              &kp U              &kp O               &kp Q
+&hml LGUI S  &hml LALT T  &hml LSHFT R  &hml LCTRL D       &kp Y             &kp F               &hmr RCTRL N        &hmr RSHFT E       &hmr RIGHT_ALT A    &hmr RGUI I
+&kp X        &kp K        &kp J         &kp G              &kp W             &kp Z               &kp H               &override_softoff  &alt_tab_override2  &alt_tab_override
                                         &lt_repeat 1 BSPC  &lt_repeat 2 DEL  &lt_repeat 4 ENTER  &lt_repeat 5 SPACE
             >;
         };
