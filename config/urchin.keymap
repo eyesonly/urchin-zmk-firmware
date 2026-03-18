@@ -405,6 +405,26 @@
             bindings = <&soft_off>;
             key-positions = <14 15 16>;
         };
+
+        desktop_1 {
+            bindings = <&kp LC(F1)>;
+            key-positions = <6 7 21>;
+        };
+
+        desktop_2 {
+            bindings = <&kp LC(F2)>;
+            key-positions = <6 7 22>;
+        };
+
+        desktop_3 {
+            bindings = <&kp LC(F3)>;
+            key-positions = <6 7 23>;
+        };
+
+        desktop_4 {
+            bindings = <&kp LC(F4)>;
+            key-positions = <6 7 11>;
+        };
     };
 
     keymap {
