@@ -406,24 +406,9 @@
             key-positions = <14 15 16>;
         };
 
-        desktop_1 {
-            bindings = <&kp LC(F1)>;
-            key-positions = <6 7 21>;
-        };
-
-        desktop_2 {
-            bindings = <&kp LC(F2)>;
-            key-positions = <6 7 22>;
-        };
-
-        desktop_3 {
-            bindings = <&kp LC(F3)>;
-            key-positions = <6 7 23>;
-        };
-
-        desktop_4 {
-            bindings = <&kp LC(F4)>;
-            key-positions = <6 7 11>;
+        to_number_layer {
+            bindings = <&to 5>;
+            key-positions = <33 30>;
         };
     };
 
@@ -507,10 +492,10 @@
         funct_layer {
             label = "Func";
             bindings = <
-&to 0   &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &to 7          &to 0
-&tog 6  &kp F4  &kp F5  &kp F6  &kp F11  &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
-&none   &kp F1  &kp F2  &kp F3  &kp F12  &tog 6  &none              &none            &none          &none
-                        &trans  &trans   &trans  &trans
+&to 0   &kp F7  &kp F8  &kp F9                  &kp F10              &none   &none              &none            &to 7          &to 0
+&tog 6  &kp F4  &kp F5  &kp F6                  &kp F11              &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
+&none   &kp F1  &kp F2  &kp F3                  &kp F12              &tog 6  &none              &none            &none          &none
+                        &lt_repeat 1 BACKSPACE  &lt_repeat 2 DELETE  &trans  &trans
             >;
         };
 
