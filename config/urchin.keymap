@@ -492,10 +492,10 @@
         funct_layer {
             label = "Func";
             bindings = <
-&to 0   &kp F7  &kp F8  &kp F9                  &kp F10              &none   &none              &none            &to 7          &to 0
-&tog 6  &kp F4  &kp F5  &kp F6                  &kp F11              &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
-&none   &kp F1  &kp F2  &kp F3                  &kp F12              &tog 6  &none              &none            &none          &none
-                        &lt_repeat 1 BACKSPACE  &lt_repeat 2 DELETE  &trans  &trans
+&to 0   &kp F7  &kp F8  &kp F9  &kp F10  &none   &none              &none            &to 7          &to 0
+&tog 6  &kp F4  &kp F5  &kp F6  &kp F11  &to 0   &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT  &kp RIGHT_GUI
+&none   &kp F1  &kp F2  &kp F3  &kp F12  &tog 6  &none              &none            &none          &none
+                        &mo 1   &mo 2    &trans  &trans
             >;
         };
 
