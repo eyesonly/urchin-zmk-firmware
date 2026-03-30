@@ -480,10 +480,10 @@
         number_layer {
             label = "Number";
             bindings = <
-&kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH  &kp TAB        &kp TAB            &kp UP_ARROW     &none            &to 0
-&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL  &none          &kp LEFT_ARROW     &kp DOWN_ARROW   &kp RIGHT_ARROW  &mo 7
-&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT    &tog 5         &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT    &kp RIGHT_GUI
-                                          &kp NUMBER_0  &kp RET    &kp BACKSPACE  &kp DELETE
+&kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH   &kp TAB    &kp TAB            &kp UP_ARROW     &none            &to 0
+&kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL   &none      &kp LEFT_ARROW     &kp DOWN_ARROW   &kp RIGHT_ARROW  &mo 7
+&kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp DOT     &kp ENTER  &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &kp RIGHT_ALT    &kp RIGHT_GUI
+                                          &kp NUMBER_0  &kp DELETE  &kp ENTER  &kp BACKSPACE
             >;
         };
 
