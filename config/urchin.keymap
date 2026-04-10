@@ -410,6 +410,11 @@
             bindings = <&to 5>;
             key-positions = <33 30>;
         };
+
+        Emacs_undo {
+            bindings = <&kp LC(UNDER)>;
+            key-positions = <12 30>;
+        };
     };
 
     keymap {
