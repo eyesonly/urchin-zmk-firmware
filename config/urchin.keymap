@@ -132,7 +132,7 @@
         emacs_up: emacs_up {
             compatible = "zmk,behavior-mod-morph";
             label = "EMACS_UP";
-            bindings = <&kp UP_ARROW>, <&kp LA(V)>;
+            bindings = <&kp LC(P)>, <&kp LA(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -141,7 +141,7 @@
         emacs_down: emacs_down {
             compatible = "zmk,behavior-mod-morph";
             label = "EMACS_DOWN";
-            bindings = <&kp DOWN_ARROW>, <&kp LC(V)>;
+            bindings = <&kp LC(N)>, <&kp LC(V)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -340,6 +340,20 @@
             bindings = <&kp LC(X) &kp R &kp Y>;
             label = "EMACS_RECT_YANK";
         };
+
+        emacs_term_char: emacs_term_char {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(K)>;
+            label = "EMACS_TERM_CHAR";
+        };
+
+        emacs_term_line: emacs_term_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(J)>;
+            label = "EMACS_TERM_LINE";
+        };
     };
 
     combos {
@@ -478,7 +492,7 @@
 &to 0             &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer       &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
 &kp LA(NUMBER_4)  &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &mo 7              &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
 &emacs_rect_kill  &emacs_rect_yank  &kp LC(G)         &save_buffer      &kp RA(SEMICOLON)  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
-                                                      &trans            &trans             &trans              &trans
+                                                      &emacs_term_line  &emacs_term_char   &trans              &trans
             >;
         };
 
