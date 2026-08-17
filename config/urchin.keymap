@@ -489,10 +489,10 @@
         emacs_layer {
             label = "Emacs";
             bindings = <
-&to 0             &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer       &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
-&kp LA(NUMBER_4)  &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &mo 7              &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
-&emacs_rect_kill  &emacs_rect_yank  &kp LC(G)         &save_buffer      &kp RA(SEMICOLON)  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
-                                                      &emacs_term_line  &emacs_term_char   &trans              &trans
+&to 0             &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kill_buffer      &kp LA(SEMI)        &other_window  &emacs_up          &kp RC(W)             &kp RA(W)
+&kp LA(NUMBER_4)  &kp LEFT_ALT      &kp LEFT_SHIFT    &kp LEFT_SHIFT    &emacs_term_char  &kp LC(A)           &emacs_left    &emacs_down        &emacs_right          &kp RC(E)
+&emacs_rect_kill  &emacs_rect_yank  &kp LC(G)         &save_buffer      &emacs_term_line  &kp LC(UNDERSCORE)  &kp LC(SPACE)  &kp LA(LESS_THAN)  &kp LA(GREATER_THAN)  &kp LC(Y)
+                                                      &trans            &trans            &trans              &trans
             >;
         };
 
@@ -527,7 +527,7 @@
             bindings = <
 &to 0   &kp F7  &kp F8  &kp F9         &kp F10     &none          &none                          &kp UP                       &to 7                       &to 0
 &tog 6  &kp F4  &kp F5  &kp F6         &kp F11     &kp PAGE_UP    &hmr RIGHT_CONTROL LEFT_ARROW  &hmr RIGHT_SHIFT DOWN_ARROW  &hmr RIGHT_ALT RIGHT_ARROW  &kp RIGHT_GUI
-&none   &kp F1  &kp F2  &kp F3         &kp F12     &kp PAGE_DOWN  &kp LEFT_ARROW                 &kp DOWN_ARROW               &kp RIGHT_ARROW             &none
+&mo 7   &kp F1  &kp F2  &kp F3         &kp F12     &kp PAGE_DOWN  &kp LEFT_ARROW                 &kp DOWN_ARROW               &kp RIGHT_ARROW             &none
                         &kp BACKSPACE  &kp DELETE  &kt ENTER      &kp SPACE
             >;
         };
