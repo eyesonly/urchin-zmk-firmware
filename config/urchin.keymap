@@ -448,6 +448,11 @@
             bindings = <&kp RA(F2)>;
             key-positions = <18 33 22>;
         };
+
+        to {
+            bindings = <&tog 6>;
+            key-positions = <6 7>;
+        };
     };
 
     keymap {
