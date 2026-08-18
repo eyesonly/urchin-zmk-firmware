@@ -443,6 +443,11 @@
             bindings = <&kp LC(UNDER)>;
             key-positions = <12 30>;
         };
+
+        Alt-F2 {
+            bindings = <&kp RA(F2)>;
+            key-positions = <18 33 22>;
+        };
     };
 
     keymap {
